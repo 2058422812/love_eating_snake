@@ -46,3 +46,10 @@ function
   - initialize the mat and grid
 - create_fruit() -void
   - generate a fruit in random
+
+
+  ### Main
+
+  #### function
+
+  - main()
