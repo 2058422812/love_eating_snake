@@ -52,4 +52,4 @@ function
 
   #### function
 
-  - main()
+  - main() `-void`
