@@ -42,7 +42,7 @@ function
 
 - refresh() `-void`
   - refresh the mat and show it
-- init() -void
+- init() `-void`
   - initialize the mat and grid
 - create_fruit() `-void`
   - generate a fruit in random
