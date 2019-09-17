@@ -48,8 +48,8 @@ function
   - generate a fruit in random
 
 
-  ### Main
+### Main
 
-  #### function
+#### function
 
-  - main() `-void`
+- main() `-void`
