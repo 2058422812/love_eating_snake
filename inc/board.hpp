@@ -5,18 +5,19 @@ using namespace cv;
 class board
 {
 private:
-    int size;
+    
     int static sideLength;
     int static width;
     Mat image;
     // int fruit[];
     // Snake snake;
-    // void initMat();
+    void initMat();
 
 public:
     board(int s);
+    int size;
     // void refresh();
     // void create_fruit();
 };
-int board::width = 3;
-int board::sideLength = 17;
+int board::width = 9;
+int board::sideLength = 51;

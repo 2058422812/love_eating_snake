@@ -22,11 +22,17 @@ opencv2/core.hpp
 Snake.hpp
 .././inc/Snake.hpp
 
-/home/a/snake/Love_eating_snake/src/board.cpp
+/home/aaaa/桌面/Snake/love_eating_snake/src/board.cpp
 opencv2/core.hpp
-/home/a/snake/Love_eating_snake/src/opencv2/core.hpp
+/home/aaaa/桌面/Snake/love_eating_snake/src/opencv2/core.hpp
 board.hpp
-/home/a/snake/Love_eating_snake/src/board.hpp
+/home/aaaa/桌面/Snake/love_eating_snake/src/board.hpp
+iostream
+-
+opencv2/imgcodecs.hpp
+/home/aaaa/桌面/Snake/love_eating_snake/src/opencv2/imgcodecs.hpp
+opencv2/highgui.hpp
+/home/aaaa/桌面/Snake/love_eating_snake/src/opencv2/highgui.hpp
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp
