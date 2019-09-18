@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/aaaa/桌面/Snake/love_eating_snake
+CMAKE_SOURCE_DIR = /home/a/snake/Love_eating_snake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/aaaa/桌面/Snake/love_eating_snake/build
+CMAKE_BINARY_DIR = /home/a/snake/Love_eating_snake/build
 
 # Utility rule file for ContinuousSubmit.
 
@@ -71,6 +71,6 @@ CMakeFiles/ContinuousSubmit.dir/clean:
 .PHONY : CMakeFiles/ContinuousSubmit.dir/clean
 
 CMakeFiles/ContinuousSubmit.dir/depend:
-	cd /home/aaaa/桌面/Snake/love_eating_snake/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/aaaa/桌面/Snake/love_eating_snake /home/aaaa/桌面/Snake/love_eating_snake /home/aaaa/桌面/Snake/love_eating_snake/build /home/aaaa/桌面/Snake/love_eating_snake/build /home/aaaa/桌面/Snake/love_eating_snake/build/CMakeFiles/ContinuousSubmit.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/a/snake/Love_eating_snake/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/snake/Love_eating_snake /home/a/snake/Love_eating_snake /home/a/snake/Love_eating_snake/build /home/a/snake/Love_eating_snake/build /home/a/snake/Love_eating_snake/build/CMakeFiles/ContinuousSubmit.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ContinuousSubmit.dir/depend
 

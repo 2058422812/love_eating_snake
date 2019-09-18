@@ -4,14 +4,14 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/aaaa/桌面/Snake/love_eating_snake
-BuildDirectory: /home/aaaa/桌面/Snake/love_eating_snake/build
+SourceDirectory: /home/a/snake/Love_eating_snake
+BuildDirectory: /home/a/snake/Love_eating_snake/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: aaaa-KLV-WX9
+Site: 1
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
 BuildName: Linux-c++
@@ -36,7 +36,7 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/aaaa/桌面/Snake/love_eating_snake"
+ConfigureCommand: "/usr/bin/cmake" "/home/a/snake/Love_eating_snake"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
