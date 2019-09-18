@@ -3,7 +3,10 @@
 #include "board.hpp"
 using namespace cv;
 
-board::board(/* args */) {}
+board::board(int s)
+{
+    size = s;
+}
 // void board::initMat()
 // {
 // }
