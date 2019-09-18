@@ -79,8 +79,10 @@ CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/openc
 CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/flann/saving.h
 CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/flann/timer.h
 CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/highgui.hpp
+CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/highgui/highgui.hpp
 CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/imgcodecs.hpp
 CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/imgproc.hpp
+CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/imgproc/imgproc.hpp
 CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/ml.hpp
 CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/ml/ml.inl.hpp
 CMakeFiles/OpenCV_template.dir/src/board.cpp.o: /usr/local/include/opencv4/opencv2/objdetect.hpp

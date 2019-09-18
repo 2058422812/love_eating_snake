@@ -12,10 +12,13 @@ private:
     // int fruit[];
     // Snake snake;
     void initMat();
-
+    void DrawLine(Mat img ,Point start,Point end);
+    void HorizonalLine();
+    int matSideLen;
 public:
     board(int s);
     int size;
+    
     // void refresh();
     // void create_fruit();
 };
