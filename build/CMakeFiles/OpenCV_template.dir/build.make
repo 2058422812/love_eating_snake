@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chuan/OpenCV_template
+CMAKE_SOURCE_DIR = /home/a/snake/Love_eating_snake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chuan/OpenCV_template/build
+CMAKE_BINARY_DIR = /home/a/snake/Love_eating_snake/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OpenCV_template.dir/depend.make
@@ -57,38 +57,38 @@ include CMakeFiles/OpenCV_template.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/OpenCV_template.dir/flags.make
 
-CMakeFiles/OpenCV_template.dir/src/main.cpp.o: CMakeFiles/OpenCV_template.dir/flags.make
-CMakeFiles/OpenCV_template.dir/src/main.cpp.o: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/chuan/OpenCV_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OpenCV_template.dir/src/main.cpp.o"
-	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OpenCV_template.dir/src/main.cpp.o -c /home/chuan/OpenCV_template/src/main.cpp
+CMakeFiles/OpenCV_template.dir/src/board.cpp.o: CMakeFiles/OpenCV_template.dir/flags.make
+CMakeFiles/OpenCV_template.dir/src/board.cpp.o: ../src/board.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/a/snake/Love_eating_snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OpenCV_template.dir/src/board.cpp.o"
+	/usr/bin/c++  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles/OpenCV_template.dir/src/board.cpp.o -c /home/a/snake/Love_eating_snake/src/board.cpp
 
-CMakeFiles/OpenCV_template.dir/src/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenCV_template.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/chuan/OpenCV_template/src/main.cpp > CMakeFiles/OpenCV_template.dir/src/main.cpp.i
+CMakeFiles/OpenCV_template.dir/src/board.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OpenCV_template.dir/src/board.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/a/snake/Love_eating_snake/src/board.cpp > CMakeFiles/OpenCV_template.dir/src/board.cpp.i
 
-CMakeFiles/OpenCV_template.dir/src/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenCV_template.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/chuan/OpenCV_template/src/main.cpp -o CMakeFiles/OpenCV_template.dir/src/main.cpp.s
+CMakeFiles/OpenCV_template.dir/src/board.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OpenCV_template.dir/src/board.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/a/snake/Love_eating_snake/src/board.cpp -o CMakeFiles/OpenCV_template.dir/src/board.cpp.s
 
-CMakeFiles/OpenCV_template.dir/src/main.cpp.o.requires:
+CMakeFiles/OpenCV_template.dir/src/board.cpp.o.requires:
 
-.PHONY : CMakeFiles/OpenCV_template.dir/src/main.cpp.o.requires
+.PHONY : CMakeFiles/OpenCV_template.dir/src/board.cpp.o.requires
 
-CMakeFiles/OpenCV_template.dir/src/main.cpp.o.provides: CMakeFiles/OpenCV_template.dir/src/main.cpp.o.requires
-	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/main.cpp.o.provides.build
-.PHONY : CMakeFiles/OpenCV_template.dir/src/main.cpp.o.provides
+CMakeFiles/OpenCV_template.dir/src/board.cpp.o.provides: CMakeFiles/OpenCV_template.dir/src/board.cpp.o.requires
+	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/board.cpp.o.provides.build
+.PHONY : CMakeFiles/OpenCV_template.dir/src/board.cpp.o.provides
 
-CMakeFiles/OpenCV_template.dir/src/main.cpp.o.provides.build: CMakeFiles/OpenCV_template.dir/src/main.cpp.o
+CMakeFiles/OpenCV_template.dir/src/board.cpp.o.provides.build: CMakeFiles/OpenCV_template.dir/src/board.cpp.o
 
 
 # Object files for target OpenCV_template
 OpenCV_template_OBJECTS = \
-"CMakeFiles/OpenCV_template.dir/src/main.cpp.o"
+"CMakeFiles/OpenCV_template.dir/src/board.cpp.o"
 
 # External object files for target OpenCV_template
 OpenCV_template_EXTERNAL_OBJECTS =
 
-OpenCV_template: CMakeFiles/OpenCV_template.dir/src/main.cpp.o
+OpenCV_template: CMakeFiles/OpenCV_template.dir/src/board.cpp.o
 OpenCV_template: CMakeFiles/OpenCV_template.dir/build.make
 OpenCV_template: /usr/local/lib/libopencv_dnn.so.4.1.2
 OpenCV_template: /usr/local/lib/libopencv_gapi.so.4.1.2
@@ -106,7 +106,7 @@ OpenCV_template: /usr/local/lib/libopencv_flann.so.4.1.2
 OpenCV_template: /usr/local/lib/libopencv_imgproc.so.4.1.2
 OpenCV_template: /usr/local/lib/libopencv_core.so.4.1.2
 OpenCV_template: CMakeFiles/OpenCV_template.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/chuan/OpenCV_template/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable OpenCV_template"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/a/snake/Love_eating_snake/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable OpenCV_template"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/OpenCV_template.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -114,7 +114,7 @@ CMakeFiles/OpenCV_template.dir/build: OpenCV_template
 
 .PHONY : CMakeFiles/OpenCV_template.dir/build
 
-CMakeFiles/OpenCV_template.dir/requires: CMakeFiles/OpenCV_template.dir/src/main.cpp.o.requires
+CMakeFiles/OpenCV_template.dir/requires: CMakeFiles/OpenCV_template.dir/src/board.cpp.o.requires
 
 .PHONY : CMakeFiles/OpenCV_template.dir/requires
 
@@ -123,6 +123,6 @@ CMakeFiles/OpenCV_template.dir/clean:
 .PHONY : CMakeFiles/OpenCV_template.dir/clean
 
 CMakeFiles/OpenCV_template.dir/depend:
-	cd /home/chuan/OpenCV_template/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chuan/OpenCV_template /home/chuan/OpenCV_template /home/chuan/OpenCV_template/build /home/chuan/OpenCV_template/build /home/chuan/OpenCV_template/build/CMakeFiles/OpenCV_template.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/a/snake/Love_eating_snake/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/snake/Love_eating_snake /home/a/snake/Love_eating_snake /home/a/snake/Love_eating_snake/build /home/a/snake/Love_eating_snake/build /home/a/snake/Love_eating_snake/build/CMakeFiles/OpenCV_template.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/OpenCV_template.dir/depend
 

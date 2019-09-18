@@ -28,6 +28,18 @@
                 "cmake",
                 "make"
             ]
+        },
+        {
+            "label": "clean",
+            "type": "shell",
+            "command": "rm",
+            "args": [
+                "-rf",
+                "*"
+            ],
+            "options": {
+                "cwd": "${workspaceFolder}/build"
+            }
         }
     ]
 }

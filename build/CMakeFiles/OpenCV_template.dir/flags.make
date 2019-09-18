@@ -6,5 +6,5 @@ CXX_FLAGS = -g
 
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/chuan/OpenCV_template/./inc -isystem /usr/local/include/opencv4 
+CXX_INCLUDES = -I/home/a/snake/Love_eating_snake/./inc -isystem /usr/local/include/opencv4 
 

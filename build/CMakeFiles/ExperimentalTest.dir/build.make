@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chuan/OpenCV_template
+CMAKE_SOURCE_DIR = /home/a/snake/Love_eating_snake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chuan/OpenCV_template/build
+CMAKE_BINARY_DIR = /home/a/snake/Love_eating_snake/build
 
 # Utility rule file for ExperimentalTest.
 
@@ -71,6 +71,6 @@ CMakeFiles/ExperimentalTest.dir/clean:
 .PHONY : CMakeFiles/ExperimentalTest.dir/clean
 
 CMakeFiles/ExperimentalTest.dir/depend:
-	cd /home/chuan/OpenCV_template/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/chuan/OpenCV_template /home/chuan/OpenCV_template /home/chuan/OpenCV_template/build /home/chuan/OpenCV_template/build /home/chuan/OpenCV_template/build/CMakeFiles/ExperimentalTest.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/a/snake/Love_eating_snake/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/snake/Love_eating_snake /home/a/snake/Love_eating_snake /home/a/snake/Love_eating_snake/build /home/a/snake/Love_eating_snake/build /home/a/snake/Love_eating_snake/build/CMakeFiles/ExperimentalTest.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ExperimentalTest.dir/depend
 

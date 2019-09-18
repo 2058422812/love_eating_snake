@@ -6,17 +6,27 @@
 
 #IncludeRegexTransform: 
 
-/home/chuan/OpenCV_template/src/main.cpp
-opencv2/core.hpp
-/home/chuan/OpenCV_template/src/opencv2/core.hpp
-opencv2/imgproc.hpp
-/home/chuan/OpenCV_template/src/opencv2/imgproc.hpp
-opencv2/highgui.hpp
-/home/chuan/OpenCV_template/src/opencv2/highgui.hpp
-opencv2/videoio.hpp
-/home/chuan/OpenCV_template/src/opencv2/videoio.hpp
-iostream
+.././inc/Link.hpp
+
+.././inc/Linklist.hpp
+Link.hpp
 -
+
+.././inc/Snake.hpp
+Linklist.hpp
+-
+
+.././inc/board.hpp
+opencv2/core.hpp
+.././inc/opencv2/core.hpp
+Snake.hpp
+.././inc/Snake.hpp
+
+/home/a/snake/Love_eating_snake/src/board.cpp
+opencv2/core.hpp
+/home/a/snake/Love_eating_snake/src/opencv2/core.hpp
+board.hpp
+/home/a/snake/Love_eating_snake/src/board.hpp
 
 /usr/local/include/opencv4/opencv2/calib3d.hpp
 opencv2/core.hpp

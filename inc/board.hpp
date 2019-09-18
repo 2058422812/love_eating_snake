@@ -5,16 +5,14 @@ using namespace cv;
 class board
 {
 private:
-    int size;
-    Mat image;
-    int fruit[];
-    Snake snake;
-    void initMat();
+    // int size;
+    // Mat image;
+    // int fruit[];
+    // Snake snake;
+    // void initMat();
 
 public:
     board(/* args */);
-    void refresh();
-    void create_fruit();
-
+    // void refresh();
+    // void create_fruit();
 };
-

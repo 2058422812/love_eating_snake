@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/opencv_template",
+            "program": "${workspaceFolder}/build/OpenCV_template",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",

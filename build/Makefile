@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/chuan/OpenCV_template
+CMAKE_SOURCE_DIR = /home/a/snake/Love_eating_snake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/chuan/OpenCV_template/build
+CMAKE_BINARY_DIR = /home/a/snake/Love_eating_snake/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -92,7 +92,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/chuan/OpenCV_template/build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/a/snake/Love_eating_snake/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -113,9 +113,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuan/OpenCV_template/build/CMakeFiles /home/chuan/OpenCV_template/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/a/snake/Love_eating_snake/build/CMakeFiles /home/a/snake/Love_eating_snake/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/chuan/OpenCV_template/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/a/snake/Love_eating_snake/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -520,32 +520,32 @@ ExperimentalBuild/fast:
 	$(MAKE) -f CMakeFiles/ExperimentalBuild.dir/build.make CMakeFiles/ExperimentalBuild.dir/build
 .PHONY : ExperimentalBuild/fast
 
-src/main.o: src/main.cpp.o
+src/board.o: src/board.cpp.o
 
-.PHONY : src/main.o
+.PHONY : src/board.o
 
 # target to build an object file
-src/main.cpp.o:
-	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+src/board.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/board.cpp.o
+.PHONY : src/board.cpp.o
 
-src/main.i: src/main.cpp.i
+src/board.i: src/board.cpp.i
 
-.PHONY : src/main.i
+.PHONY : src/board.i
 
 # target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
+src/board.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/board.cpp.i
+.PHONY : src/board.cpp.i
 
-src/main.s: src/main.cpp.s
+src/board.s: src/board.cpp.s
 
-.PHONY : src/main.s
+.PHONY : src/board.s
 
 # target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
+src/board.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/board.cpp.s
+.PHONY : src/board.cpp.s
 
 # Help Target
 help:
@@ -587,9 +587,9 @@ help:
 	@echo "... ContinuousTest"
 	@echo "... ContinuousUpdate"
 	@echo "... ExperimentalBuild"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
+	@echo "... src/board.o"
+	@echo "... src/board.i"
+	@echo "... src/board.s"
 .PHONY : help
 
 
