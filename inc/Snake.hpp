@@ -1,18 +1,23 @@
 #include <Linklist.hpp>
+#define UP 0
+#define DOWN 1
+#define LEFT 2
+#define RIGHT 3
+//TODO
 
 class Snake {
     public:
         Linklist *body;
         int length;
-        bool isFruitEaten;
-        char direction;
+        int direction;
 
     Snake(void);
     Snake(int headx, int heady);
 
     void move();
     void grow();
-    bool meetBody();
+    int* gethead();
+    int* gettail();
     void changeDirection(int nextDirection);
     // void changeDirection(int nextDirection){
     //     char pointkey = waitKey(0);

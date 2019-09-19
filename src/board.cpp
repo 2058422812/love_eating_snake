@@ -8,21 +8,11 @@
 using namespace cv;
 using namespace std;
 
-<<<<<<< HEAD
-board::board(/* args */) {}
-// void board::initMat()
-// {
-// }
-// int main()
-// {
-//     return 0;
-// }
-=======
 int main()
 {
     board board1(20);
 
-    int pos[] = {10, 10};
+    int pos[] = {1, 3};
     board1.DrawSquare(pos, board::red);
 
     imshow("1", board1.image);
@@ -69,4 +59,3 @@ void board::initMat()
     HorizonalLine();
     VerticalLine();
 }
->>>>>>> ed90c75e43c7c911c91bfb13945b25ece1c89cae
