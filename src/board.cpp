@@ -1,5 +1,5 @@
 #include "opencv2/core.hpp"
-//#include "Snake.hpp"
+// #include "Snake.hpp"
 #include "board.hpp"
 #include <iostream>
 #include "opencv2/imgcodecs.hpp"
@@ -11,6 +11,20 @@ using namespace std;
 int main()
 {
     board board1(20);
+
+        int k =0;
+        int arr[400][2]={-1};
+        for(int i=0;i<20;i++){
+            for(int j=0;j<20;j++){
+                int pos[]={i,j};
+                if (board1.isBlack(pos)){
+                    arr[k][0]=i;
+                    arr[k][1]=j;
+                }
+            }
+        }
+
+
 
     int pos[] = {10, 10};
     board1.DrawSquare(pos, board::red);
@@ -41,6 +55,8 @@ int main()
             pos[1] = pos[1] + 1;
             board1.DrawSquare(pos, board::red);
             break;
+        case 'q':
+        return 0;
 
         default:
             break;
@@ -59,3 +75,60 @@ void board::initMat()
     HorizonalLine();
     VerticalLine();
 }
+
+
+void board::move(){
+    int tailpos[]={snake.tailx,snake.taily};
+    board::DrawSquare(tailpos,board::black);
+    snake.move();
+    int headpos[]={snake.headx,snake.heady};
+    board::DrawSquare(headpos,board::red);
+    
+}
+
+
+
+int* rand1(int array[400][2]){
+    
+ 
+    int origin[]={-1,-1};
+    int number=0;
+    
+
+
+    for(int i=0;i < 400;i++){
+        if (array[i][0] == origin[0]){
+            number++;
+        }else{}
+
+    }
+    int RandomNumber;
+    srand((unsigned)time(NULL));
+    RandomNumber = rand() % (number +1);
+    cout << number << endl;
+    cout << RandomNumber << endl;
+    return array[RandomNumber];
+
+}
+// int* rand(int array[400][2]){
+    
+ 
+//     int origin[]={-1,-1};
+//     int number=0;
+    
+
+
+//     for(int i=0;i < 400;i++){
+//         if (array[i][0] != origin[0]){
+//             number++;
+//         }else{}
+
+//     }
+//     int RandomNumber;
+//     srand((unsigned)time(NULL));
+//     RandomNumber = rand() % number;
+//     return array[RandomNumber];
+
+// }
+
+ 

@@ -9,8 +9,9 @@ private:
     int static sideLength;
     int static width;
     // int fruit[];
-    // Snake snake;
+     Snake snake;
     void initMat();
+    void move();
     void DrawLine(Mat img, Point start, Point end);
     void HorizonalLine();
     void VerticalLine();
@@ -20,6 +21,7 @@ public:
     board(int s);
     int size;
     Mat image;
+    bool isBlack(int pos[]);
     static Scalar red;
     static Scalar white;
     static Scalar black;
@@ -66,4 +68,18 @@ void board::DrawSquare(int pos[], Scalar color)
     int row_val = width + pos[1] * (width + sideLength);
     int col_val = width + pos[0] * (width + sideLength);
     rectangle(image, Point(row_val, col_val), Point(row_val + sideLength, col_val + sideLength), color, -1);
+}
+
+bool board::isBlack(int pos[]){
+    int row_val = width + pos[1] * (width + sideLength)+ 0.5 * sideLength;
+    int col_val = width + pos[0] * (width + sideLength)+ 0.5 * sideLength;
+    Scalar color = board::image.at<Vec3b>(row_val,col_val);
+    if(color==Scalar(0,0,0,0)){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+
 }
