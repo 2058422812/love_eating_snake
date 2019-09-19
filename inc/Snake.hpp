@@ -2,16 +2,16 @@
 
 class Snake {
     public:
-        Linklist body;
-        int headx, heady;
-        int direction;
+        Linklist *body;
         int length;
+        bool isFruitEaten;
+        char direction;
 
     Snake(void);
     Snake(int headx, int heady);
 
     void move();
-    bool grow();
+    void grow();
     bool meetBody();
     void changeDirection(int nextDirection);
     // void changeDirection(int nextDirection){
