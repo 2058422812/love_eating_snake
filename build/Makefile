@@ -48,10 +48,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/snake/Love_eating_snake
+CMAKE_SOURCE_DIR = /home/m/Desktop/snake_eat/love_eating_snake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/snake/Love_eating_snake/build
+CMAKE_BINARY_DIR = /home/m/Desktop/snake_eat/love_eating_snake/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -92,7 +92,7 @@ package/fast: package
 # Special rule for the target package_source
 package_source:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Run CPack packaging tool for source..."
-	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/a/snake/Love_eating_snake/build/CPackSourceConfig.cmake
+	/usr/bin/cpack --config ./CPackSourceConfig.cmake /home/m/Desktop/snake_eat/love_eating_snake/build/CPackSourceConfig.cmake
 .PHONY : package_source
 
 # Special rule for the target package_source
@@ -102,8 +102,8 @@ package_source/fast: package_source
 
 # Special rule for the target edit_cache
 edit_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	/usr/bin/cmake -E echo No\ interactive\ CMake\ dialog\ available.
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake cache editor..."
+	/usr/bin/cmake-gui -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -113,9 +113,9 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/a/snake/Love_eating_snake/build/CMakeFiles /home/a/snake/Love_eating_snake/build/CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m/Desktop/snake_eat/love_eating_snake/build/CMakeFiles /home/m/Desktop/snake_eat/love_eating_snake/build/CMakeFiles/progress.marks
 	$(MAKE) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/a/snake/Love_eating_snake/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/m/Desktop/snake_eat/love_eating_snake/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -520,6 +520,33 @@ ExperimentalBuild/fast:
 	$(MAKE) -f CMakeFiles/ExperimentalBuild.dir/build.make CMakeFiles/ExperimentalBuild.dir/build
 .PHONY : ExperimentalBuild/fast
 
+src/Snake.o: src/Snake.cpp.o
+
+.PHONY : src/Snake.o
+
+# target to build an object file
+src/Snake.cpp.o:
+	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/Snake.cpp.o
+.PHONY : src/Snake.cpp.o
+
+src/Snake.i: src/Snake.cpp.i
+
+.PHONY : src/Snake.i
+
+# target to preprocess a source file
+src/Snake.cpp.i:
+	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/Snake.cpp.i
+.PHONY : src/Snake.cpp.i
+
+src/Snake.s: src/Snake.cpp.s
+
+.PHONY : src/Snake.s
+
+# target to generate assembly for a file
+src/Snake.cpp.s:
+	$(MAKE) -f CMakeFiles/OpenCV_template.dir/build.make CMakeFiles/OpenCV_template.dir/src/Snake.cpp.s
+.PHONY : src/Snake.cpp.s
+
 src/board.o: src/board.cpp.o
 
 .PHONY : src/board.o
@@ -587,6 +614,9 @@ help:
 	@echo "... ContinuousTest"
 	@echo "... ContinuousUpdate"
 	@echo "... ExperimentalBuild"
+	@echo "... src/Snake.o"
+	@echo "... src/Snake.i"
+	@echo "... src/Snake.s"
 	@echo "... src/board.o"
 	@echo "... src/board.i"
 	@echo "... src/board.s"

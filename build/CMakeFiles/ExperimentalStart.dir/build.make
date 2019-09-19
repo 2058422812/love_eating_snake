@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/a/snake/Love_eating_snake
+CMAKE_SOURCE_DIR = /home/m/Desktop/snake_eat/love_eating_snake
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/a/snake/Love_eating_snake/build
+CMAKE_BINARY_DIR = /home/m/Desktop/snake_eat/love_eating_snake/build
 
 # Utility rule file for ExperimentalStart.
 
@@ -71,6 +71,6 @@ CMakeFiles/ExperimentalStart.dir/clean:
 .PHONY : CMakeFiles/ExperimentalStart.dir/clean
 
 CMakeFiles/ExperimentalStart.dir/depend:
-	cd /home/a/snake/Love_eating_snake/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/a/snake/Love_eating_snake /home/a/snake/Love_eating_snake /home/a/snake/Love_eating_snake/build /home/a/snake/Love_eating_snake/build /home/a/snake/Love_eating_snake/build/CMakeFiles/ExperimentalStart.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/m/Desktop/snake_eat/love_eating_snake/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/m/Desktop/snake_eat/love_eating_snake /home/m/Desktop/snake_eat/love_eating_snake /home/m/Desktop/snake_eat/love_eating_snake/build /home/m/Desktop/snake_eat/love_eating_snake/build /home/m/Desktop/snake_eat/love_eating_snake/build/CMakeFiles/ExperimentalStart.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/ExperimentalStart.dir/depend
 

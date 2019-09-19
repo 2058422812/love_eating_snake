@@ -7,7 +7,7 @@ board::board(/* args */) {}
 // void board::initMat()
 // {
 // }
-int main()
-{
-    return 0;
-}
+// int main()
+// {
+//     return 0;
+// }

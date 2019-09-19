@@ -4,17 +4,17 @@
 
 
 # Configuration directories and files
-SourceDirectory: /home/a/snake/Love_eating_snake
-BuildDirectory: /home/a/snake/Love_eating_snake/build
+SourceDirectory: /home/m/Desktop/snake_eat/love_eating_snake
+BuildDirectory: /home/m/Desktop/snake_eat/love_eating_snake/build
 
 # Where to place the cost data store
 CostDataFile: 
 
 # Site is something like machine.domain, i.e. pragmatic.crd
-Site: 1
+Site: m-G3-3579
 
 # Build name is osname-revision-compiler, i.e. Linux-2.4.2-2smp-c++
-BuildName: Linux-c++
+BuildName: Linux-g++-7
 
 # Subprojects
 LabelsForSubprojects: 
@@ -36,7 +36,7 @@ ScpCommand: /usr/bin/scp
 NightlyStartTime: 00:00:00 EDT
 
 # Commands for the build/test/submit cycle
-ConfigureCommand: "/usr/bin/cmake" "/home/a/snake/Love_eating_snake"
+ConfigureCommand: "/usr/bin/cmake" "/home/m/Desktop/snake_eat/love_eating_snake"
 MakeCommand: /usr/bin/cmake --build . --config "${CTEST_CONFIGURATION_TYPE}" -- -i
 DefaultCTestConfigurationType: Release
 
@@ -72,7 +72,7 @@ UpdateOptions:
 UpdateType: git
 
 # Compiler info
-Compiler: /usr/bin/c++
+Compiler: /usr/bin/g++-7
 CompilerVersion: 7.4.0
 
 # Dynamic analysis (MemCheck)
