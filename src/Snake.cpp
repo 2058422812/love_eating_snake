@@ -11,15 +11,16 @@ void Snake::move() {
 
 void Snake::grow() {
     int *currentHead = gethead();
-    int x, y;
+    int x = currentHead[0];
+    int y = currentHead[1];
     if(direction == UP) {
-        x = currentHead[0] - 1;
+        x--;
     }else if(direction == DOWN) {
-        x = currentHead[0] + 1;
+        x++;
     }else if(direction == LEFT) {
-        y = currentHead[1] - 1;
+        y--;
     }else if(direction == RIGHT) {
-        y = currentHead[1] + 1;
+        y++;
     }
     (*body).addToHead(x, y);
 }
@@ -35,3 +36,30 @@ int* Snake::gettail() {
 void Snake::changeDirection(int nextDirection) {
     direction = nextDirection;
 }
+
+// #include <stdio.h>
+// int main() {
+//     Snake snake(3, 3);
+//     int* coordinate;
+// //get function test
+//     coordinate = snake.gethead();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+
+//     coordinate = snake.gettail();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+
+// //move function test
+//     snake.changeDirection(0);
+//     snake.move();
+//     coordinate = snake.gethead();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+//     coordinate = snake.gettail();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+
+// //grow function test
+//     snake.grow();
+//     coordinate = snake.gethead();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+//     coordinate = snake.gettail();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+// }

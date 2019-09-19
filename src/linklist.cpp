@@ -55,18 +55,20 @@ bool Linklist::removeTail() {
 // int main() {
 //     Linklist test(0, 0);
 //     Link a(1, 0);
-//     Link *b = &a;
-//     Link c(1, 0);
-//    printf("%d %d %d", &a == b, &c == &a, b == &c);
-//     Link *d;
-//     d = new Link(1, 0);
-//     a.setNext(*d);
-//     printf("%lld\n", d);
-//     test.addNext(1, 1);
-//     test.addNext(2, 2);
-//     test.addNext(3, 3);
+
+//     int *coordinate = a.getCoordinate();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+//     coordinate = (*test.head).getCoordinate();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+
+
 //     test.addToHead(-1, -1);
+//     coordinate = (*test.head).getCoordinate();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+
+
 //     test.removeTail();
-//     printf("%d\n", test.hasElement(3, 3));
-//     printf("%d\n", test.hasElement(0, 0));
+//     coordinate = (*test.tail).getCoordinate();
+//     printf("%d %d\n", coordinate[0], coordinate[1]);
+//     printf("end");
 // }

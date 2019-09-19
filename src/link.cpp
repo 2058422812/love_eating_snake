@@ -12,9 +12,6 @@ Link::Link(int x, int y) {
 }
 Link::~Link() {
     delete [] coordinate;
-    if(next != 0) {
-        delete next;
-    }
 }
 
 void Link::setNext(Link &link) {
