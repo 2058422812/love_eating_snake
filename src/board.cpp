@@ -8,64 +8,48 @@
 using namespace cv;
 using namespace std;
 
-int main()
-{
-    board board1(20);
+// int main()
+// {
+//     board board1(20);
 
-        int k =0;
-        int arr[400][2]={-1};
-        for(int i=0;i<20;i++){
-            for(int j=0;j<20;j++){
-                int pos[]={i,j};
-                if (board1.isBlack(pos)){
-                    arr[k][0]=i;
-                    arr[k][1]=j;
-                }
-            }
-        }
+//     int pos[] = {1, 3};
+//     board1.DrawSquare(pos, board::red);
 
+//     imshow("1", board1.image);
+//     while (true)
+//     {
+//         char key = waitKey(1);
+//         switch (key)
+//         {
+//         case 'w':
+//             board1.DrawSquare(pos, board::black);
+//             pos[0] = pos[0] - 1;
+//             board1.DrawSquare(pos, board::red);
+//             break;
+//         case 's':
+//             board1.DrawSquare(pos, board::black);
+//             pos[0] = pos[0] + 1;
+//             board1.DrawSquare(pos, board::red);
+//             break;
+//         case 'a':
+//             board1.DrawSquare(pos, board::black);
+//             pos[1] = pos[1] - 1;
+//             board1.DrawSquare(pos, board::red);
+//             break;
+//         case 'd':
+//             board1.DrawSquare(pos, board::black);
+//             pos[1] = pos[1] + 1;
+//             board1.DrawSquare(pos, board::red);
+//             break;
 
+//         default:
+//             break;
+//         }
+//         imshow("1", board1.image);
+//     }
 
-    int pos[] = {10, 10};
-    board1.DrawSquare(pos, board::red);
-
-    imshow("1", board1.image);
-    while (true)
-    {
-        char key = waitKey(1);
-        switch (key)
-        {
-        case 'w':
-            board1.DrawSquare(pos, board::black);
-            pos[0] = pos[0] - 1;
-            board1.DrawSquare(pos, board::red);
-            break;
-        case 's':
-            board1.DrawSquare(pos, board::black);
-            pos[0] = pos[0] + 1;
-            board1.DrawSquare(pos, board::red);
-            break;
-        case 'a':
-            board1.DrawSquare(pos, board::black);
-            pos[1] = pos[1] - 1;
-            board1.DrawSquare(pos, board::red);
-            break;
-        case 'd':
-            board1.DrawSquare(pos, board::black);
-            pos[1] = pos[1] + 1;
-            board1.DrawSquare(pos, board::red);
-            break;
-        case 'q':
-        return 0;
-
-        default:
-            break;
-        }
-        imshow("1", board1.image);
-    }
-
-    return 0;
-}
+//     return 0;
+// }
 
 void board::initMat()
 {
