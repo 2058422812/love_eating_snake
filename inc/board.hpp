@@ -11,7 +11,6 @@ private:
     
      Snake *snake;
     void initMat();
-    void move();
     void DrawLine(Mat img, Point start, Point end);
     void HorizonalLine();
     void VerticalLine();
@@ -29,12 +28,12 @@ public:
     static Scalar red;
     static Scalar white;
     static Scalar black;
+    static Scalar green;
     void DrawSquare(int pos[], Scalar color);
     int *returnBlack();
     void move();
     bool fruitEat();
     void next();
-     int fruit[2]; 
      void changeDirection(char key);
 
     // void refresh();
@@ -45,6 +44,7 @@ int board::sideLength = 40;
 Scalar board::red = Scalar(0, 0, 255);
 Scalar board::white = Scalar(255, 255, 255);
 Scalar board::black = Scalar(0, 0, 0);
+Scalar board::green = Scalar(0,255,0);
 
 board::board(int s)
 {
@@ -126,8 +126,10 @@ int *board::returnBlack(){
 
 void board::initFruit(){
     int *Black = board::returnBlack();
-   fruit[0]= Black[0];
+    fruit[0]= Black[0];
     fruit[1]= Black[1];
+
+    DrawSquare(fruit,green);
     delete [] Black;
 }
 
