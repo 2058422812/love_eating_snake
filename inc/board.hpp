@@ -8,12 +8,13 @@ class board
 private:
     int static sideLength;
     int static width;
-    // int fruit[];
-    // Snake snake;
+   
+    Snake *snake;
     void initMat();
     void DrawLine(Mat img, Point start, Point end);
     void HorizonalLine();
     void VerticalLine();
+    void grow();
     int matSideLen;
 
 public:
@@ -24,6 +25,10 @@ public:
     static Scalar white;
     static Scalar black;
     void DrawSquare(int pos[], Scalar color);
+    void move();
+    bool fruitEat();
+    void next();
+     int fruit[2];
 
     // void refresh();
     // void create_fruit();
@@ -38,6 +43,7 @@ board::board(int s)
 {
     size = s;
     initMat();
+    snake= new Snake(5,5);
 }
 void board::DrawLine(Mat img, Point start, Point end)
 {
@@ -66,4 +72,71 @@ void board::DrawSquare(int pos[], Scalar color)
     int row_val = width + pos[1] * (width + sideLength);
     int col_val = width + pos[0] * (width + sideLength);
     rectangle(image, Point(row_val, col_val), Point(row_val + sideLength, col_val + sideLength), color, -1);
+}
+
+void board::grow()
+{
+    (*snake).grow();
+    DrawSquare((*snake).gethead(),board::red);
+}
+void board::move()
+{
+   
+    DrawSquare((*snake).gettail(),board::black);
+    (*snake).move();
+    DrawSquare((*snake).gethead(),board::red );
+
+}
+bool board::fruitEat()
+{
+     int *currentHead = (*snake).gethead();
+    int x = currentHead[0];
+    int y = currentHead[1];
+    switch ((*snake).direction)
+    {
+    case UP:
+        x--;
+        if (x==fruit[0]&&y==fruit[1]){
+             
+             return true;
+        }
+        break;
+    case DOWN:
+        x++;
+        if(x==fruit[0]&&y==fruit[1]){
+            return true;
+        }
+        break;
+    case LEFT:
+       y--;
+       if(x==fruit[0]&&y==fruit[1]){
+            return true;
+        }
+        break;
+    case RIGHT:
+        y++;
+        if(x==fruit[0]&&y==fruit[1]){
+            return true;
+        }
+        break;
+        
+    
+    default:
+        return false;
+        break;
+    }
+    return false;
+
+}
+void board::next(){
+   
+    if(fruitEat())
+    {
+          grow();
+    }
+    else
+    {
+        move();
+    }
+    
 }
