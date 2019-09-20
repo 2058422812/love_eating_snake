@@ -8,8 +8,8 @@ class board
 private:
     int static sideLength;
     int static width;
-    // int fruit[];
-     Snake snake;
+    
+     Snake *snake;
     void initMat();
     void move();
     void DrawLine(Mat img, Point start, Point end);
@@ -18,15 +18,18 @@ private:
     int matSideLen;
 
 public:
+    int fruit[2];
+    int rand1(int max);
     board(int s);
     int size;
     Mat image;
+    void initFruit();
     bool isBlack(int pos[]);
     static Scalar red;
     static Scalar white;
     static Scalar black;
     void DrawSquare(int pos[], Scalar color);
-
+    int *returnBlack();
     // void refresh();
     // void create_fruit();
 };
@@ -39,7 +42,10 @@ Scalar board::black = Scalar(0, 0, 0);
 board::board(int s)
 {
     size = s;
+    snake = new Snake(1, 1);
     initMat();
+    fruit[0] = 0;
+    fruit[1] = 0;
 }
 void board::DrawLine(Mat img, Point start, Point end)
 {
@@ -81,5 +87,49 @@ bool board::isBlack(int pos[]){
         return false;
     }
 
+
+}
+
+int *board::returnBlack(){
+    int temp[400][2];
+    for(int i=0;i<400;i++){
+        for(int j=0;j<2;j++){
+            temp[i][j]=-1;
+        }
+    }
+    int k=0;
+    for(int i=0;i<20;i++){
+        for(int j=0;j<20;j++){
+            int post[] = {i,j};
+            if(board::isBlack(post)){
+                temp[k][0] =i;
+                temp[k][1] =j;
+                k++;
+            }
+        }
+    }
+    int index = board::rand1(k);
+    int *black = new int[2];
+    black[0] = temp[index][0];
+    black[1] = temp[index][1];
+
+    return black;
+}
+
+void board::initFruit(){
+    int *Black = board::returnBlack();
+   fruit[0]= Black[0];
+    fruit[1]= Black[1];
+    delete [] Black;
+}
+
+int board::rand1(int max){
+    
+    
+    int RandomNumber;
+    srand((unsigned)time(NULL));
+    RandomNumber = rand() % max ;
+    
+    return RandomNumber;
 
 }
