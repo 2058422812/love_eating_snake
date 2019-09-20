@@ -26,8 +26,7 @@ int main()
         if(temp != -1) {
             key = temp;
         }
-        if(counter <=7
-        ){
+        if(counter <=7){
             counter++;
         }
         else
