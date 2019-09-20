@@ -49,11 +49,12 @@ Scalar board::green = Scalar(0,255,0);
 board::board(int s)
 {
     size = s;
-    snake = new Snake(1, 1);
     initMat();
     fruit[0] = 0;
     fruit[1] = 0;
-    snake= new Snake(5,5);
+    snake= new Snake(size/2,size/2);
+    DrawSquare((*snake).gethead(),red);
+
 }
 void board::DrawLine(Mat img, Point start, Point end)
 {
@@ -147,6 +148,7 @@ void board::grow()
 {
     (*snake).grow();
     DrawSquare((*snake).gethead(),board::red);
+    initFruit();
 }
 void board::move()
 {

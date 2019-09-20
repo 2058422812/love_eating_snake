@@ -11,61 +11,28 @@ using namespace std;
 
 int main()
 {
+
     board board1(20);
 
     int pos[] = {1, 3};
-    board1.DrawSquare(pos, board::red);
-
-    cv::imshow("1", board1.image);
-    char key = DEFAULT;
-    int counter=0; 
-    while (true)
-    {
-        char temp = waitKey(16);
-
-        if(temp != -1) {
-            key = temp;
-        }
-        if(counter <=7){
-            counter++;
-        }
-        else
-        {
-            
+   // board1.initFruit();
+    board1.fruit[0]=10;
+    board1.fruit[1]=5;
+    board1.DrawSquare(board1.fruit,board::green);
+    imshow("window",board1.image);
+    board1.changeDirection(LEFT);
+    while(true){
         
-           switch (key)
-        {
-        case 'w':
-            board1.DrawSquare(pos, board::black);
-            pos[0] = pos[0] - 1;
-            board1.DrawSquare(pos, board::red);
-            
-            break;
-        case 's':
-            board1.DrawSquare(pos, board::black);
-            pos[0] = pos[0] + 1;
-            board1.DrawSquare(pos, board::red);
-            break;
-        case 'a':
-            board1.DrawSquare(pos, board::black);
-            pos[1] = pos[1] - 1;
-            board1.DrawSquare(pos, board::red);
-            break;
-        case 'd':
-            board1.DrawSquare(pos, board::black);
-            pos[1] = pos[1] + 1;
-            board1.DrawSquare(pos, board::red);
-            break;
-
-        default:
-            break;
-        }
-        counter=0;
-        }
+        char key = waitKey(1000);
         
-        cv::imshow("1", board1.image);
+        if (key =='q')
+        {return 0;}
+        board1.next();
+        imshow("window",board1.image);
+        
     }
 
+    waitKey(0);
     return 0;
 }
 
