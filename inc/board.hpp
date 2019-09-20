@@ -28,8 +28,8 @@ public:
     void move();
     bool fruitEat();
     void next();
-     int fruit[2];
-
+     int fruit[2];  
+     
     // void refresh();
     // void create_fruit();
 };
