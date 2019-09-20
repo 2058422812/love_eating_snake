@@ -28,8 +28,9 @@ public:
     void move();
     bool fruitEat();
     void next();
-     int fruit[2];  
-     
+     int fruit[2]; 
+     void changeDirection(char key);
+
     // void refresh();
     // void create_fruit();
 };
@@ -139,4 +140,7 @@ void board::next(){
         move();
     }
     
+}
+void board::changeDirection(char key){
+    (*snake).changeDirection(key);
 }
