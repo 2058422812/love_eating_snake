@@ -72,8 +72,14 @@ int main()
 void board::initMat()
 {
     matSideLen = size * sideLength + (size + 1) * width;
-    cout << matSideLen;
+    cout << matSideLen<<endl;
     image = Mat::zeros(matSideLen, matSideLen, CV_8UC3);
     HorizonalLine();
     VerticalLine();
 }
+
+
+
+
+
+
