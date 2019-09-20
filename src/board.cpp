@@ -11,9 +11,8 @@ using namespace std;
 int main()
 {
     board board1(20);
-
-    int pos[] = {1, 3};
-    board1.DrawSquare(pos, board::red);
+    
+    board1.DrawSquare(, board::red);
 
     imshow("1", board1.image);
     while (true)

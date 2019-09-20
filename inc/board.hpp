@@ -43,7 +43,7 @@ board::board(int s)
 {
     size = s;
     initMat();
-    snake= new Snake(5,5);
+    snake= new Snake(size / 2, size / 2);
 }
 void board::DrawLine(Mat img, Point start, Point end)
 {
@@ -77,13 +77,14 @@ void board::DrawSquare(int pos[], Scalar color)
 void board::grow()
 {
     (*snake).grow();
+    (*snake).headOutOfBound(size);
     DrawSquare((*snake).gethead(),board::red);
 }
 void board::move()
 {
-   
     DrawSquare((*snake).gettail(),board::black);
     (*snake).move();
+    (*snake).headOutOfBound(size);
     DrawSquare((*snake).gethead(),board::red );
 
 }
