@@ -33,7 +33,7 @@ int* Snake::gettail() {
     return (*(*body).tail).getCoordinate();
 }
 
-void Snake::changeDirection(int nextDirection) {
+void Snake::changeDirection(char nextDirection) {
     direction = nextDirection;
 }
 
