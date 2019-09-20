@@ -147,14 +147,15 @@ int board::rand1(int max){
 void board::grow()
 {
     (*snake).grow();
+    (*snake).headOutOfBound(size);
     DrawSquare((*snake).gethead(),board::red);
     initFruit();
 }
 void board::move()
 {
-   
     DrawSquare((*snake).gettail(),board::black);
     (*snake).move();
+    (*snake).headOutOfBound(size);
     DrawSquare((*snake).gethead(),board::red );
 
 }

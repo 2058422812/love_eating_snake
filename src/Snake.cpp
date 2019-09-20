@@ -37,6 +37,22 @@ void Snake::changeDirection(char nextDirection) {
     direction = nextDirection;
 }
 
+void Snake::headOutOfBound(int size) {
+    int* head = (*(*body).head).getCoordinate();
+    if(head[0] >= size) {
+        head[0] = 0;
+    }
+    if(head[1] >= size) {
+        head[1] = 0;
+    }
+    if(head[0] < 0) {
+        head[0] = size - 1;
+    }
+    if(head[1] < 0) {
+        head[1] = size - 1;
+    }
+}
+
 // #include <stdio.h>
 // int main() {
 //     Snake snake(3, 3);
