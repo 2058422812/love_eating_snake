@@ -11,7 +11,7 @@ class Snake {
         int length;
         char direction;
 
-    Snake(void);
+    // Snake(void);
     Snake(int headx, int heady);
 
     void move();

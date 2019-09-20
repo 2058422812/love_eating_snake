@@ -1,10 +1,11 @@
-#include "opencv2/core.hpp"
+// #include "opencv2/core.hpp"
 //#include "Snake.hpp"
 #include "board.hpp"
 #include <iostream>
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui/highgui.hpp"
-#include "opencv2/imgproc/imgproc.hpp"
+// #include "opencv2/imgproc/imgproc.hpp"
+#define DEFAULT 'f'
 using namespace cv;
 using namespace std;
 
@@ -14,16 +15,30 @@ int main()
     
     board1.DrawSquare(, board::red);
 
-    imshow("1", board1.image);
+    cv::imshow("1", board1.image);
+    char key = DEFAULT;
+    int counter=0; 
     while (true)
     {
-        char key = waitKey(1);
-        switch (key)
+        char temp = waitKey(16);
+
+        if(temp != -1) {
+            key = temp;
+        }
+        if(counter <=7){
+            counter++;
+        }
+        else
+        {
+            
+        
+           switch (key)
         {
         case 'w':
             board1.DrawSquare(pos, board::black);
             pos[0] = pos[0] - 1;
             board1.DrawSquare(pos, board::red);
+            
             break;
         case 's':
             board1.DrawSquare(pos, board::black);
@@ -44,7 +59,10 @@ int main()
         default:
             break;
         }
-        imshow("1", board1.image);
+        counter=0;
+        }
+        
+        cv::imshow("1", board1.image);
     }
 
     return 0;
@@ -53,8 +71,14 @@ int main()
 void board::initMat()
 {
     matSideLen = size * sideLength + (size + 1) * width;
-    cout << matSideLen;
+    cout << matSideLen<<endl;
     image = Mat::zeros(matSideLen, matSideLen, CV_8UC3);
     HorizonalLine();
     VerticalLine();
 }
+
+
+
+
+
+

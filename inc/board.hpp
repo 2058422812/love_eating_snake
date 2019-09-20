@@ -8,8 +8,8 @@ class board
 private:
     int static sideLength;
     int static width;
-   
-    Snake *snake;
+    
+     Snake *snake;
     void initMat();
     void DrawLine(Mat img, Point start, Point end);
     void HorizonalLine();
@@ -18,17 +18,23 @@ private:
     int matSideLen;
 
 public:
+    int fruit[2];
+    int rand1(int max);
     board(int s);
     int size;
     Mat image;
+    void initFruit();
+    bool isBlack(int pos[]);
     static Scalar red;
     static Scalar white;
     static Scalar black;
+    static Scalar green;
     void DrawSquare(int pos[], Scalar color);
+    int *returnBlack();
     void move();
     bool fruitEat();
     void next();
-     int fruit[2];
+     void changeDirection(char key);
 
     // void refresh();
     // void create_fruit();
@@ -38,12 +44,16 @@ int board::sideLength = 40;
 Scalar board::red = Scalar(0, 0, 255);
 Scalar board::white = Scalar(255, 255, 255);
 Scalar board::black = Scalar(0, 0, 0);
+Scalar board::green = Scalar(0,255,0);
 
 board::board(int s)
 {
     size = s;
+    snake = new Snake(1, 1);
     initMat();
-    snake= new Snake(size / 2, size / 2);
+    fruit[0] = 0;
+    fruit[1] = 0;
+    snake= new Snake(5,5);
 }
 void board::DrawLine(Mat img, Point start, Point end)
 {
@@ -72,6 +82,65 @@ void board::DrawSquare(int pos[], Scalar color)
     int row_val = width + pos[1] * (width + sideLength);
     int col_val = width + pos[0] * (width + sideLength);
     rectangle(image, Point(row_val, col_val), Point(row_val + sideLength, col_val + sideLength), color, -1);
+}
+
+bool board::isBlack(int pos[]){
+    int row_val = width + pos[1] * (width + sideLength)+ 0.5 * sideLength;
+    int col_val = width + pos[0] * (width + sideLength)+ 0.5 * sideLength;
+    Scalar color = board::image.at<Vec3b>(row_val,col_val);
+    if(color==Scalar(0,0,0,0)){
+        return true;
+    }
+    else{
+        return false;
+    }
+
+
+}
+
+int *board::returnBlack(){
+    int temp[400][2];
+    for(int i=0;i<400;i++){
+        for(int j=0;j<2;j++){
+            temp[i][j]=-1;
+        }
+    }
+    int k=0;
+    for(int i=0;i<20;i++){
+        for(int j=0;j<20;j++){
+            int post[] = {i,j};
+            if(board::isBlack(post)){
+                temp[k][0] =i;
+                temp[k][1] =j;
+                k++;
+            }
+        }
+    }
+    int index = board::rand1(k);
+    int *black = new int[2];
+    black[0] = temp[index][0];
+    black[1] = temp[index][1];
+
+    return black;
+}
+
+void board::initFruit(){
+    int *Black = board::returnBlack();
+    fruit[0]= Black[0];
+    fruit[1]= Black[1];
+
+    DrawSquare(fruit,green);
+    delete [] Black;
+}
+
+int board::rand1(int max){
+    
+    
+    int RandomNumber;
+    srand((unsigned)time(NULL));
+    RandomNumber = rand() % max ;
+    
+    return RandomNumber;
 }
 
 void board::grow()
@@ -140,4 +209,7 @@ void board::next(){
         move();
     }
     
+}
+void board::changeDirection(char key){
+    (*snake).changeDirection(key);
 }
