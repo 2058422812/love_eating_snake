@@ -14,23 +14,27 @@ int main()
 
     board board1(20);
 
-    int pos[] = {1, 3};
-   // board1.initFruit();
-    board1.fruit[0]=10;
-    board1.fruit[1]=5;
-    board1.DrawSquare(board1.fruit,board::green);
-    imshow("window",board1.image);
-    board1.changeDirection(LEFT);
-    while(true){
-        
-        char key = waitKey(1000);
-        
-        if (key =='q')
-        {return 0;}
-        board1.next();
-        imshow("window",board1.image);
-        
-    }
+    //     int pos[] = {1, 3};
+    //     // board1.initFruit();
+    //     board1.fruit[0] = 10;
+    //     board1.fruit[1] = 5;
+    board1.DrawSquare(board1.fruit, board::green);
+
+    //     board1.changeDirection(LEFT);
+    //     while (true)
+    //     {
+
+    //         char key = waitKey(1000);
+
+    //         if (key == 'q')
+    //         {
+    //             return 0;
+    //         }
+    //         board1.next();
+    //         imshow("window", board1.image);
+    //     }
+    board1.lose();
+    imshow("window", board1.image);
 
     waitKey(0);
     return 0;
@@ -39,14 +43,8 @@ int main()
 void board::initMat()
 {
     matSideLen = size * sideLength + (size + 1) * width;
-    cout << matSideLen<<endl;
+
     image = Mat::zeros(matSideLen, matSideLen, CV_8UC3);
     HorizonalLine();
     VerticalLine();
 }
-
-
-
-
-
-
