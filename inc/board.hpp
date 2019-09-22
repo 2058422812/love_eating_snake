@@ -1,6 +1,9 @@
 #include "opencv2/core.hpp"
 #include "opencv2/imgproc/imgproc.hpp"
+#include "opencv2/imgcodecs.hpp"
+#include "opencv2/highgui/highgui.hpp"
 #include "Snake.hpp"
+
 using namespace cv;
 
 class board
@@ -228,11 +231,12 @@ void board::changeDirection(char key)
 
 void board::lose()
 {
+    String imageName("./L.png");
     matSideLen = size * sideLength + (size + 1) * width;
     Mat M(matSideLen, matSideLen, CV_8UC3, red);
     image = M;
-    Mat lose = imread("Loser.jpg");
+    Mat lose = imread(imageName, IMREAD_COLOR);
     Mat imageROI;
-    imageROI = image(Range(150, 150 + lose.rows), Range(150, 150 + lose.col));
+    imageROI = image(Range(350, 350 + lose.rows), Range(330, 330 + lose.cols));
     lose.copyTo(imageROI);
 }
