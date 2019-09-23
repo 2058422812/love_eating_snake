@@ -34,8 +34,10 @@ int main()
                 {
                     return 0;
                 }else{
-                    if(!board1.next()) {
-                        break;
+                    if((*board1.snake).isDirectionSet()) {
+                        if(!board1.next()) {
+                            break;
+                        }
                     }
                 }
                 frameCounter = 0;

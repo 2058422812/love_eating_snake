@@ -2,6 +2,7 @@
 
 Snake::Snake(int headx, int heady) {
     body = new Linklist(headx, heady);
+    direction = 0;
 }
 
 void Snake::move() {
@@ -37,10 +38,16 @@ void Snake::changeDirection(char nextDirection) {
     switch (nextDirection)
     {
     case UP:
+        if(direction != DOWN) direction = nextDirection;
+        break;
     case DOWN:
+        if(direction != UP) direction = nextDirection;
+        break;
     case LEFT:
+        if(direction != RIGHT) direction = nextDirection;
+        break;
     case RIGHT:
-        direction = nextDirection;
+        if(direction != LEFT) direction = nextDirection;
         break;
     default:
         break;
@@ -61,6 +68,10 @@ void Snake::headOutOfBound(int size) {
     if(head[1] < 0) {
         head[1] = size - 1;
     }
+}
+
+bool Snake::isDirectionSet() {
+    return direction != 0;
 }
 
 // #include <stdio.h>

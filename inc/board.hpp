@@ -3,6 +3,7 @@
 #include "opencv2/imgcodecs.hpp"
 #include "opencv2/highgui/highgui.hpp"
 #include "Snake.hpp"
+#include <stdio.h>
 
 using namespace cv;
 
@@ -12,7 +13,7 @@ private:
     int static sideLength;
     int static width;
 
-    Snake *snake;
+    
     void initMat();
     void DrawLine(Mat img, Point start, Point end);
     void HorizonalLine();
@@ -21,6 +22,7 @@ private:
     int matSideLen;
 
 public:
+    Snake *snake;
     void lose();
     int fruit[2];
     int rand1(int max);
@@ -105,8 +107,8 @@ bool board::isBlack(int pos[])
 }
 
 bool board::isRed(int pos[]){
-    int row_val = width + pos[1] * (width + sideLength) + 0.5 * sideLength;
-    int col_val = width + pos[0] * (width + sideLength) + 0.5 * sideLength;
+    int row_val = width + pos[0] * (width + sideLength) + 0.5 * sideLength;
+    int col_val = width + pos[1] * (width + sideLength) + 0.5 * sideLength;
     Scalar color = board::image.at<Vec3b>(row_val, col_val);
     if (color == Scalar(0, 0, 255))
     {
@@ -172,28 +174,28 @@ int board::rand1(int max)
 
 bool board::grow()
 {
-    (*snake).grow();
-    (*snake).headOutOfBound(size);
+   (*snake).grow();
+   (*snake).headOutOfBound(size);
     int* head = (*snake).gethead();
-    if(isRed(head)) {
-        lose();
-        return false;
-    }
     DrawSquare(head, board::red);
     initFruit();
     return true;
 }
 bool board::move()
 {
-    DrawSquare((*snake).gettail(), board::black);
-//   (*snake).move();
-    (*snake).headOutOfBound(size);
+    int* temp = (*snake).gettail();
+    int tail[2];
+    tail[0] = temp[0];
+    tail[1] = temp[1];
+   (*snake).move();
+   (*snake).headOutOfBound(size);
     int* head = (*snake).gethead();
     
     if(isRed(head)) {
         lose();
         return false;
     }
+    DrawSquare(tail, board::black);
     DrawSquare(head, board::red);
     return true;
 }

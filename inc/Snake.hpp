@@ -20,6 +20,7 @@ class Snake {
     int* gettail();
     void changeDirection(char nextDirection);
     void headOutOfBound(int size);
+    bool isDirectionSet();
     // void changeDirection(int nextDirection){
     //     char pointkey = waitKey(0);
     //     switch (pointkey)
