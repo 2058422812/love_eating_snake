@@ -27,7 +27,7 @@ int main()
     int frame = 60;
         while (true)
         {
-            key = waitKey(1000 / frame);
+            key = cv::waitKey(1000 / frame);
             board1.changeDirection(key);
             if(frameCounter >= speed) {
                 if (key == 'q')
@@ -48,7 +48,7 @@ int main()
             imshow("window", board1.image);
         }
     imshow("window", board1.image);
-    waitKey(0);
+    cv::waitKey(0);
     return 0;
 }
 

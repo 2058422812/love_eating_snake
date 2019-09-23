@@ -38,7 +38,7 @@ void Snake::changeDirection(char nextDirection) {
     switch (nextDirection)
     {
     case UP:
-        if(direction != DOWN) direction = nextDirection;
+        if((direction != DOWN)) direction = nextDirection;
         break;
     case DOWN:
         if(direction != UP) direction = nextDirection;
