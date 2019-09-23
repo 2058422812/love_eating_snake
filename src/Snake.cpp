@@ -34,7 +34,17 @@ int* Snake::gettail() {
 }
 
 void Snake::changeDirection(char nextDirection) {
-    direction = nextDirection;
+    switch (nextDirection)
+    {
+    case UP:
+    case DOWN:
+    case LEFT:
+    case RIGHT:
+        direction = nextDirection;
+        break;
+    default:
+        break;
+    }
 }
 
 void Snake::headOutOfBound(int size) {

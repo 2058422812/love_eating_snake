@@ -15,27 +15,37 @@ int main()
     board board1(20);
 
     //     int pos[] = {1, 3};
-    //     // board1.initFruit();
+    board1.initFruit();
     //     board1.fruit[0] = 10;
     //     board1.fruit[1] = 5;
     board1.DrawSquare(board1.fruit, board::green);
 
     //     board1.changeDirection(LEFT);
-    //     while (true)
-    //     {
-
-    //         char key = waitKey(1000);
-
-    //         if (key == 'q')
-    //         {
-    //             return 0;
-    //         }
-    //         board1.next();
-    //         imshow("window", board1.image);
-    //     }
-    board1.lose();
+    char key;
+    int frameCounter = 0;
+    int speed = 20;
+    int frame = 60;
+        while (true)
+        {
+            key = waitKey(1000 / frame);
+            board1.changeDirection(key);
+            if(frameCounter >= speed) {
+                if (key == 'q')
+                {
+                    return 0;
+                }else{
+                    if(!board1.next()) {
+                        break;
+                    }
+                }
+                frameCounter = 0;
+            }else {
+                frameCounter++;
+            }
+            
+            imshow("window", board1.image);
+        }
     imshow("window", board1.image);
-
     waitKey(0);
     return 0;
 }

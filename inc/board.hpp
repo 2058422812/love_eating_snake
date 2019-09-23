@@ -17,7 +17,7 @@ private:
     void DrawLine(Mat img, Point start, Point end);
     void HorizonalLine();
     void VerticalLine();
-    void grow();
+    bool grow();
     int matSideLen;
 
 public:
@@ -28,6 +28,7 @@ public:
     int size;
     Mat image;
     void initFruit();
+    bool isRed(int pos[]);
     bool isBlack(int pos[]);
     static Scalar red;
     static Scalar white;
@@ -35,11 +36,11 @@ public:
     static Scalar green;
     void DrawSquare(int pos[], Scalar color);
     int *returnBlack();
-    void move();
+    bool move();
     bool fruitEat();
-    void next();
+    bool next();
     void changeDirection(char key);
-
+    void isGameEnd();
     // void refresh();
     // void create_fruit();
 };
@@ -103,6 +104,20 @@ bool board::isBlack(int pos[])
     }
 }
 
+bool board::isRed(int pos[]){
+    int row_val = width + pos[1] * (width + sideLength) + 0.5 * sideLength;
+    int col_val = width + pos[0] * (width + sideLength) + 0.5 * sideLength;
+    Scalar color = board::image.at<Vec3b>(row_val, col_val);
+    if (color == Scalar(0, 0, 255))
+    {
+        return true;
+    }
+    else
+    {
+        return false;
+    }
+}
+
 int *board::returnBlack()
 {
     int temp[400][2];
@@ -155,19 +170,32 @@ int board::rand1(int max)
     return RandomNumber;
 }
 
-void board::grow()
+bool board::grow()
 {
     (*snake).grow();
     (*snake).headOutOfBound(size);
-    DrawSquare((*snake).gethead(), board::red);
+    int* head = (*snake).gethead();
+    if(isRed(head)) {
+        lose();
+        return false;
+    }
+    DrawSquare(head, board::red);
     initFruit();
+    return true;
 }
-void board::move()
+bool board::move()
 {
     DrawSquare((*snake).gettail(), board::black);
-    (*snake).move();
+//   (*snake).move();
     (*snake).headOutOfBound(size);
-    DrawSquare((*snake).gethead(), board::red);
+    int* head = (*snake).gethead();
+    
+    if(isRed(head)) {
+        lose();
+        return false;
+    }
+    DrawSquare(head, board::red);
+    return true;
 }
 bool board::fruitEat()
 {
@@ -212,16 +240,17 @@ bool board::fruitEat()
     }
     return false;
 }
-void board::next()
+bool board::next()
 {
 
     if (fruitEat())
     {
-        grow();
+        return grow();
+
     }
     else
     {
-        move();
+        return move();
     }
 }
 void board::changeDirection(char key)
@@ -240,3 +269,4 @@ void board::lose()
     imageROI = image(Range(350, 350 + lose.rows), Range(330, 330 + lose.cols));
     lose.copyTo(imageROI);
 }
+

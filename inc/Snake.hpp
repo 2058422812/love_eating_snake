@@ -1,7 +1,7 @@
 #include <Linklist.hpp>
 #define UP 'w'
-#define DOWN 'a'
-#define LEFT 's'
+#define DOWN 's'
+#define LEFT 'a'
 #define RIGHT 'd'
 //TODO
 
